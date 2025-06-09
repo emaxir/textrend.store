@@ -1,1 +1,246 @@
+/* Сброс отступов и полей у всех элементов и включение box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+/* Базовые стили страницы и фон – текстура льняной ткани */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url('../images/linen-texture.jpg') repeat;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Ссылки без подчеркивания, цвет по умолчанию */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ==========================
+   Шапка сайта
+   ========================== */
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.main-nav ul,
+.user-nav {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.main-nav a:hover,
+.user-nav a:hover {
+  opacity: 0.7;
+}
+
+/* ==========================
+   Навигация по категориям
+   ========================== */
+.category-nav {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 0.5rem 2rem;
+}
+
+.categories {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+.categories li {
+  position: relative;
+}
+
+.categories .dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(255, 255, 255, 0.95);
+  list-style: none;
+  padding: 0.5rem 0;
+  display: none;
+  min-width: 180px;
+}
+
+.categories li:hover .dropdown {
+  display: block;
+}
+
+.categories .dropdown li {
+  padding: 0.5rem 1rem;
+}
+
+/* ==========================
+   Hero-секция
+   ========================== */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ==========================
+   Общие стили для разделов
+   ========================== */
+section {
+  padding: 2rem;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.product-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* ==========================
+   Карточки товаров
+   ========================== */
+.product-card {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+}
+
+.price {
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.btn {
+  display: inline-block;
+  background: #25D366;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: opacity 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+/* ==========================
+   WhatsApp-блок
+   ========================== */
+.contact-whatsapp {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.whatsapp-button {
+  display: inline-block;
+  background: #25D366;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  transition: opacity 0.2s;
+}
+
+.whatsapp-button:hover {
+  opacity: 0.8;
+}
+
+/* ==========================
+   Блок «О нас» и подписка
+   ========================== */
+.about,
+.newsletter {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.newsletter form {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.newsletter input {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  min-width: 250px;
+}
+
+.newsletter button {
+  background: #25D366;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* ==========================
+   Футер
+   ========================== */
+.site-footer {
+  background: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  padding: 1rem 2rem;
+}
+
+.payment-icons img {
+  height: 30px;
+  margin: 0 0.5rem;
+}
+
+.back-to-top {
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* ==========================
+   Адаптивные корректировки
+   ========================== */
+@media (max-width: 768px) {
+  .main-nav ul,
+  .user-nav {
+    display: none;
+  }
+
+  .category-nav {
+    padding: 1rem;
+  }
+
+  .categories {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
