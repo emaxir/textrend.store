@@ -8,7 +8,7 @@
 /* Базовые стили страницы и фон – текстура льняной ткани */
 body {
   font-family: 'Poppins', sans-serif;
-  background: url('../images/linen-texture.jpg') repeat;
+  background: url('/assets/images/linen-texture.jpg') repeat;
   color: #333;
   line-height: 1.6;
 }
@@ -38,15 +38,13 @@ a {
   height: 40px;
 }
 
-.main-nav ul,
-.user-nav {
+.main-nav ul {
   list-style: none;
   display: flex;
   gap: 1rem;
 }
 
-.main-nav a:hover,
-.user-nav a:hover {
+.main-nav a:hover {
   opacity: 0.7;
 }
 
@@ -77,6 +75,7 @@ a {
   padding: 0.5rem 0;
   display: none;
   min-width: 180px;
+  z-index: 10;
 }
 
 .categories li:hover .dropdown {
@@ -91,13 +90,21 @@ a {
    Hero-секция
    ========================== */
 .hero {
+  padding: 60px 20px;
   text-align: center;
-  padding: 4rem 2rem;
 }
 
 .hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1rem;
+  margin-top: 0;
+  color: #555;
 }
 
 /* ==========================
@@ -227,23 +234,8 @@ h2 {
 }
 
 /* ==========================
-   Адаптивные корректировки
+   Кнопка "Назад"
    ========================== */
-@media (max-width: 768px) {
-  .main-nav ul,
-  .user-nav {
-    display: none;
-  }
-
-  .category-nav {
-    padding: 1rem;
-  }
-
-  .categories {
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-}
 .back-link {
   margin: 16px;
 }
@@ -258,6 +250,20 @@ h2 {
   display: inline-block;
 }
 
-.btn-back:hover {
-  background-color: #f0f0f0;
-}
+/* ==========================
+   Адаптивные корректировки
+   ========================== */
+@media (max-width: 768px) {
+  .main-nav ul {
+    display: none;
+  }
+
+  .category-nav {
+    padding: 1rem;
+  }
+
+  .categories {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
