@@ -5,6 +5,21 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>textrend.store</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggles = document.querySelectorAll('.dropdown-toggle');
+      toggles.forEach(toggle => {
+        toggle.addEventListener('click', function () {
+          const dropdown = this.nextElementSibling;
+          if (dropdown.style.display === 'block') {
+            dropdown.style.display = 'none';
+          } else {
+            dropdown.style.display = 'block';
+          }
+        });
+      });
+    });
+  </script>
 </head>
 <body id="top">
   <!-- Header -->
@@ -27,7 +42,7 @@
     <ul class="categories">
       <li>
         <span class="dropdown-toggle">Каталог тканей</span>
-        <ul class="dropdown">
+        <ul class="subcategories">
           <li><a href="poplin.html">Поплин</a></li>
           <li><a href="satin.html">Сатин</a></li>
           <li><a href="muslin.html">Муслин</a></li>
@@ -39,106 +54,26 @@
       </li>
       <li>
         <span class="dropdown-toggle">Фурнитура</span>
-        <ul class="dropdown">
+        <ul class="subcategories">
           <li><a href="furnitura.html">Фурнитура</a></li>
           <li><a href="katalog-furnitura.html">Каталог фурнитуры</a></li>
         </ul>
       </li>
       <li>
         <span class="dropdown-toggle">Домашний текстиль</span>
-        <ul class="dropdown">
+        <ul class="subcategories">
           <li><a href="home-textile.html">Текстиль для дома</a></li>
           <li><a href="katalog-home.html">Каталог Home</a></li>
         </ul>
       </li>
       <li>
         <span class="dropdown-toggle">Одежда и трикотаж</span>
-        <ul class="dropdown">
+        <ul class="subcategories">
           <li><a href="katalog-odezhda.html">Каталог одежды</a></li>
           <li><a href="katalog-trikotazh.html">Каталог трикотажа</a></li>
         </ul>
       </li>
     </ul>
   </nav>
-
-  <main>
-    <!-- Hero -->
-    <section class="hero">
-      <h1>TexTrend — ваш проводник в мир тканей</h1>
-      <p>Видео-образцы продукции</p>
-    </section>
-
-    <!-- Featured products -->
-    <section class="featured-products">
-      <h2>Рекомендуем</h2>
-      <div class="product-grid">
-        <article class="product-card">
-          <img src="assets/images/product-placeholder.jpg" alt="Название товара">
-          <h3>Поплин Premium 240 см</h3>
-          <p class="price">$3.50 / м</p>
-        </article>
-        <article class="product-card">
-          <img src="assets/images/product-placeholder.jpg" alt="Название товара">
-          <h3>Сатин страйп 300TC</h3>
-          <p class="price">$5.80 / м</p>
-        </article>
-        <article class="product-card">
-          <img src="assets/images/product-placeholder.jpg" alt="Название товара">
-          <h3>Муслин 4 слоя</h3>
-          <p class="price">$6.70 / м</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- All products -->
-    <section class="all-products">
-      <h2>Все товары</h2>
-      <div class="product-grid">
-        <article class="product-card">
-          <img src="assets/images/product-placeholder.jpg" alt="Название товара">
-          <h3>Фланель 240 см</h3>
-          <p class="price">$3.90 / м</p>
-        </article>
-        <article class="product-card">
-          <img src="assets/images/product-placeholder.jpg" alt="Название товара">
-          <h3>Вискоза шёлковистая</h3>
-          <p class="price">$4.60 / м</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- WhatsApp CTA -->
-    <section class="contact-whatsapp">
-      <h2>Свяжитесь с нами</h2>
-      <a href="https://wa.me/905436523991" class="whatsapp-button" target="_blank" rel="noopener">
-        Напишите нам в WhatsApp
-      </a>
-    </section>
-
-    <!-- About -->
-    <section class="about">
-      <h2>О нас</h2>
-      <p>TexTrend.store — проект, основанный в 2023 году в Стамбуле. Мы работаем в сфере закупки и перепродажи тканей.</p>
-      <p>Наш офис находится в историческом текстильном районе Стамбула — напрямую от производителей и дистрибьюторов.</p>
-      <p>В ассортименте — широкий выбор: трикотаж (Penye, Kompak), поплин, сатин, муслин, деним, жаккард, фланель и другие ткани.</p>
-      <p>Специализируемся на цифровой печати по хлопку и трикотажу с минимальным заказом от 23 кг, а также предлагаем ткани с тефлоновым покрытием и специальные капроновые сетки.</p>
-      <p>Обрабатываем заказы быстро, доставляем в любую страну СНГ и Европы, поддерживаем связь на русском, турецком, румынском и английском.</p>
-    </section>
-
-    <!-- Newsletter -->
-    <section class="newsletter">
-      <h2>Подписка на рассылку</h2>
-      <form action="#" method="post">
-        <input type="email" name="email" placeholder="Ваш e-mail" required>
-        <button type="submit">Подписаться</button>
-      </form>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <p>© textrend.store 2025. Все права защищены.</p>
-    <a href="#top" class="back-to-top">Наверх</a>
-  </footer>
 </body>
 </html>
