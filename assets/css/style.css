@@ -1,4 +1,4 @@
- {
+{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -91,7 +91,7 @@ a {
   z-index: 999;
 }
 
-.categories li:hover .dropdown {
+.categories li.open .dropdown {
   display: block;
 }
 
@@ -240,7 +240,7 @@ a {
     gap: 0.5rem;
   }
 
-  .categories li:hover .dropdown {
+  .categories li.open .dropdown {
     display: block;
     position: static;
     box-shadow: none;
