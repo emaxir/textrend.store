@@ -52,7 +52,7 @@ a {
 }
 
 /* ========================== */
-/* Навигация по категориям    */
+/* Категории (Навигация)      */
 /* ========================== */
 .category-nav {
   background: rgba(255, 255, 255, 0.85);
@@ -61,32 +61,52 @@ a {
 
 .categories {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   list-style: none;
+  flex-wrap: wrap;
 }
 
 .categories li {
   position: relative;
 }
 
-.categories .dropdown {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: rgba(255, 255, 255, 0.95);
-  list-style: none;
-  padding: 0.5rem 0;
-  display: none;
-  min-width: 180px;
-  z-index: 10;
+.dropdown-toggle {
+  cursor: pointer;
+  display: block;
+  text-align: left;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
 }
 
-.categories li:hover .dropdown {
+.categories .subcategories {
+  display: none;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.95);
+  top: 100%;
+  left: 0;
+  list-style: none;
+  padding: 0.5rem 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  min-width: 200px;
+  z-index: 999;
+}
+
+.categories li:hover .subcategories {
   display: block;
 }
 
-.categories .dropdown li {
+.categories .subcategories li {
   padding: 0.5rem 1rem;
+}
+
+.categories .subcategories a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+}
+
+.categories .subcategories a:hover {
+  background-color: #f0f0f0;
 }
 
 /* ========================== */
@@ -111,27 +131,14 @@ a {
 }
 
 /* ========================== */
-/* Общие стили для разделов   */
+/* Карточки товаров           */
 /* ========================== */
-section {
-  padding: 2rem;
-}
-
-h2 {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
 .product-grid {
   display: grid;
   gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
-/* ========================== */
-/* Карточки товаров           */
-/* ========================== */
 .product-card {
   background: rgba(255, 255, 255, 0.9);
   padding: 1rem;
@@ -149,25 +156,13 @@ h2 {
   margin: 0.5rem 0;
 }
 
-.btn {
-  display: inline-block;
-  background: #25D366;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  transition: opacity 0.2s;
-}
-
-.btn:hover {
-  opacity: 0.8;
-}
-
 /* ========================== */
-/* WhatsApp-блок              */
+/* WhatsApp CTA               */
 /* ========================== */
 .contact-whatsapp {
   text-align: center;
   background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
 }
 
 .whatsapp-button {
@@ -185,11 +180,12 @@ h2 {
 }
 
 /* ========================== */
-/* Блок «О нас» и подписка    */
+/* Блок О нас и Подписка      */
 /* ========================== */
 .about,
 .newsletter {
   background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
 }
 
 .newsletter form {
@@ -216,7 +212,7 @@ h2 {
 }
 
 /* ========================== */
-/* Футер                      */
+/* Footer                     */
 /* ========================== */
 .site-footer {
   background: rgba(255, 255, 255, 0.9);
@@ -232,36 +228,31 @@ h2 {
 }
 
 /* ========================== */
-/* Кнопка "Назад"             */
-/* ========================== */
-.back-link {
-  margin: 16px;
-}
-
-.btn-back {
-  text-decoration: none;
-  font-size: 16px;
-  color: #333;
-  padding: 4px 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  display: inline-block;
-}
-
-/* ========================== */
-/* Адаптивные корректировки   */
+/* Адаптив                    */
 /* ========================== */
 @media (max-width: 768px) {
   .main-nav ul {
     display: none;
   }
 
-  .category-nav {
-    padding: 1rem;
+  .categories {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
-  .categories {
-    flex-wrap: wrap;
-    gap: 0.5rem;
+  .categories li:hover .subcategories {
+    display: block;
+    position: static;
+    box-shadow: none;
+  }
+
+  .subcategories {
+    display: none;
+    position: static;
+    padding-left: 1rem;
+  }
+
+  .subcategories a {
+    padding-left: 1rem;
   }
 }
