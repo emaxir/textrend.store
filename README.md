@@ -1,2 +1,0 @@
-# textrend.store
-Website 
